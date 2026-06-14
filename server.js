@@ -25,7 +25,7 @@ fs.readFile("./football_players_data.json", "utf8",(err,data)=>{
 app.get('/',(req,res)=>{
     res.json({
         name: "Football Players API",
-        description: "This is an API that provides the info about many football players.",
+        description: "This is an API that provides the info about many football players. This data is little old so be aware of that.",
         version: "1.0.1",
         endpoints:[
             "/api/players - GET all players",
@@ -40,7 +40,9 @@ app.get('/',(req,res)=>{
             "/api/top-passers - Get top 10 passers",
             "/api/top-pacers - Get top 10 pacers",
             "/api/top-finishers - Get top 10 finishers",
-            "/api/best-value - Get most valuable players"
+            "/api/best-value - Get most valuable players",
+            "/api/top10 - Get top 10 players",
+            "/api/n?n=<value> - Get top n players like if <value> is 6 then top 6 players will be returned."
         ]
     })
 });
@@ -82,6 +84,16 @@ app.get("/api/rating/:rating",(req,res)=>{
     res.json(result);
 })
 
+app.get("/api/top10",(req,res)=>{
+    const result = [...players].sort((a,b)=>b.overall_rating-a.overall_rating).slice(0,10);
+    res.json(result);
+})
+app.get("/api/n",(req,res)=>{
+    const n = parseInt(req.query.n);
+    const result = [...players].sort((a,b)=>b.overall_rating-a.overall_rating).slice(0,n);
+    res.json(result);
+})
+
 app.get("/api/random", (req,res)=>{
     const randomplayer = players[Math.floor(Math.random()*players.length)];
     res.json(randomplayer);
@@ -89,7 +101,7 @@ app.get("/api/random", (req,res)=>{
 
 app.get("/api/best-value",(req,res)=>{
     const result = [...players].sort((a,b)=> 
-    (b.overall_rating/b.market_value)= (a.overall_rating/a.market_value)).slice(0,10);
+    (b.overall_rating/b.value_euro)-(a.overall_rating/a.value_euro)).slice(0,10);
     res.json(result);
 })
 
@@ -113,7 +125,11 @@ app.get("/api/top-passers",(req,res)=>{
     res.json(result);
 })
 
+app.get("api/top-pacers",(req,res)=>{
+    const result = [...players].sort((a,b)=> b.pace-a.pace).slice(0,10);
+    res.json(result);
+})
 
 app.listen(port,()=>{
-    console.log(`Visit http://localhost:${port}`);
+    console.log(`Server running on http://localhost:${port}`);
 })
