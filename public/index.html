@@ -5,9 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Football Players API</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
-    
-    <script src="script.js"></script>
+    <h2>Football Players API</h2>
+    <div class="intro">
+        <h3>Introduction</h3>
+        <p>Welcome! This is a simple API of football that can be used for fetching data in football related projects.So, the thing is I searched up in internet for different players datasets and I found a perfect dataset for this api. Then I added that dataset here and I took that data, compiled it into objects to make different routes and again turned it into json for sending the data. Different routes and their features are listed below.</p>
+    </div>
+    <div class="routes">
+        <h3>Routes & Features</h3>
+        <ol type="1">
+            <li>/api/players - Fetches all 17954 players.</li>
+            <li>/api/players/:name - Fetches any player by specific name.</li>
+            <li>/api/top/:n - Get top n players by rating.</li>
+            <li>/api/country/:country - Get players by country</li>
+            <li>/api/position/:position - Get players by specific position</li>
+            <li>/api/rating/:rating - Get players by specific rating</li>
+            <li>/api/random - Get a random player</li>
+            <li>/api/nationality-list - Get list of nationalities</li>
+            <li>/api/top-dribblers - Get top 10 dribblers</li>
+            <li>/api/top-pacers - Get top 10 pacers</li>
+            <li>/api/top-passers - Get top 10 passers</li>
+            <li>/api/top-finishers - Get top 10 finishers</li>
+            <li>/api/best-value - Get best valued players</li>
+            <li>/api/top10 - Get top 10 players</li>
+        </ol>
+    </div>
+    <div class="image">
+    <p>Below here is a representation image of how the api sends the data. It sends the data in JSON format with different fields with their values like shooting, dribbling, finishing and etc.</p>
+    <img src="./api ss.png" alt="api ss">
+    </div>
 </body>
 </html>

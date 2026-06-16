@@ -1,0 +1,55 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(14, 13, 13);
+    font-family: Poppins, sans-serif;
+    font-size: 18px;
+}
+h2{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin: 3px;
+    color: blue;
+    font-size: 48px;
+}
+.intro{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    margin-left: 7px;
+}
+h3{
+    color: lightblue;
+    margin: 3px;
+    font-size: 24px;
+}
+p{
+    color: white;  
+    margin-left: 3px;
+    font-size: 18px;
+}
+ol{
+    margin-left: 20px;
+}
+li{
+    color: white;
+}
+.routes{
+    margin-left: 7px;
+    margin-top: 20px;
+}
+.image{
+    margin-left: 7px;
+    margin-top: 20px;
+}
+img{
+    width: 100%;
+    height: auto;
+    margin-top: 5px;
+}
