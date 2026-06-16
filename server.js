@@ -7,6 +7,9 @@ const path = require('path');
 
 app.use(cors());
 app.use(express.json());
+
+app.use(express.static(path.join(__dirname, 'public')));
+
 let players = [];
 
 fs.readFile("./football_players_data.json", "utf8",(err,data)=>{
@@ -22,7 +25,8 @@ fs.readFile("./football_players_data.json", "utf8",(err,data)=>{
     }
 });
 
-app.get('/',(req,res)=>{
+
+app.get('/info',(req,res)=>{
     res.json({
         name: "Football Players API",
         description: "This is an API that provides the info about many football players. This data is little old so be aware of that.",
@@ -80,7 +84,7 @@ app.get("/api/position/:position",(req,res)=>{
 
 app.get("/api/rating/:rating",(req,res)=>{
     const rating = parseInt(req.params.rating);
-    const result = players.filter(p=>p.overall_rating = rating);
+    const result = players.filter(p=>p.overall_rating === rating);
     res.json(result);
 })
 
