@@ -5,11 +5,11 @@ Football players API is a simple API of football that can be used for fetching d
 ## Features:
 There are many features that I added by making different routes so that the user can fetch specific data too. They are given below:
 - /api/players - Fetches all 17954 players.
-- /api/players/:name - Fetches any player by specific name.
-- /api/top/:n - Get top n players by rating.
-- /api/country/:country - Get players by country.
-- /api/position/:position - Get players by specific position.
-- /api/rating/:rating - Get players by specific rating.
+- /api/players/:name - Fetches any player by specific name. (Replace :name with a name for eg: ronaldo)
+- /api/top/:n - Get top n players by rating. (Replcae :n with a number)
+- /api/country/:country - Get players by country. (Replace :country with the country name)
+- /api/position/:position - Get players by specific position. (Replace :position with a position like St)
+- /api/rating/:rating - Get players by specific rating. (Replace :rating with the actual rating like 93)
 - /api/random - Get a random player.
 - /api/nationality-list - Get list of nationalities.
 - /api/top-dribblers - Get top 10 dribblers.
